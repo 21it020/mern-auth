@@ -9,7 +9,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('your_dockerhub_username/mern-auth:latest')
+                    docker.build('21it020/mern-auth:latest')
                 }
             }
         }
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS) {
-                        docker.image('your_dockerhub_username/mern-auth:latest').push()
+                        docker.image('21it020/mern-auth:latest').push()
                     }
                 }
             }
